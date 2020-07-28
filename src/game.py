@@ -40,4 +40,3 @@ def count_neighbors(board, x, y):
     
     return neighbors
 
-
