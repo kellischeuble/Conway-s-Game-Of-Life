@@ -23,14 +23,13 @@ run = True
 while run:
     clock.tick(FPS)
 
-    for event in pygame.event.get():
+    event = pygame.event.poll():
         # if press window close button
         # without this it doesn't stop the game
-        if event.type == pygame.QUIT:
-            run = False
+    if event.type == pygame.QUIT:
+        run = False
         
     screen.fill(white)
     pygame.display.update()
-
 
 pygame.quit()
