@@ -1,35 +1,8 @@
-import pygame
-from game import create_board
+from board import Board
 
-width, height =  1000, 700
-size = (width, height)
+def main():
+	pass
 
-pygame.init()
-pygame.display.set_caption("Conway's Game of Life")
-clock = pygame.time.Clock()
-FPS = 60 
 
-# set screen size
-screen = pygame.display.set_mode(size)
-
-# colors
-black = (0,0,0)
-white = (255,255,255)
-
-create_board(width, height)
-
-# create event loop
-run = True
-while run:
-    clock.tick(FPS)
-
-    event = pygame.event.poll():
-        # if press window close button
-        # without this it doesn't stop the game
-    if event.type == pygame.QUIT:
-        run = False
-        
-    screen.fill(white)
-    pygame.display.update()
-
-pygame.quit()
+if __name__ == '__main__': 
+	main() 
