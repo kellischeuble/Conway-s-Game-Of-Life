@@ -2,7 +2,7 @@ import random
 
 
 class Cell():
-    # change this size to alter tthe size of the cells
+    # change this size to alter the size of the cells
     def __init__(self, size=20):
         self._status = "Dead"
         self.size = size
@@ -34,6 +34,7 @@ class Cell():
 
     def get_print_character(self):
         """
+        for testing purposes
         """
         if self.is_alive():
             return "X"

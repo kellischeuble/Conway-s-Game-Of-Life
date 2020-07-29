@@ -16,6 +16,9 @@ class Board():
 
     def update_board(self, new_board):
         """
+        new state will be added to the new_board
+        (out of place) depending on the number of 
+        neighbors and the rules below
         """
 
         for i, row in enumerate(self.grid):
@@ -24,25 +27,28 @@ class Board():
 
                 if cell.is_alive() and (n == 2  or n == 3):
                     new_board.grid[i][j].set_alive()
-                if not cell.is_alive() and (n == 3):
+                if not cell.is_alive() and n == 3:
                     new_board.grid[i][j].set_alive()
                 else:
                     new_board.grid[i][j].set_dead()
 
+        # I might potentially want to reuse this matrix later
         self.grid = new_board.grid
                 
     def count_neighbors(self, row, col):
         """
         """
         n = 0
-
-        # TODO: 
-        # Simplify this shiit
         
+        # I'm going to ignore outer cells for now
         if (row == 0 or row == self.rows-1):
             row = 1
         if (col ==0 or col == self.columns-1):
             col = 1
+
+        # TODO: 
+        # Simplify this shiit
+
         if self.grid[row-1][col].is_alive():
             n += 1
         if self.grid[row+1][col].is_alive():
@@ -64,21 +70,24 @@ class Board():
 
     def print_board(self):
         """
+        For testing purposes
         """
         for row in self.grid:
             print([cell.get_print_character() for cell in row])
 
     def draw(self):
+        """
+        """
 
         for i, row in enumerate(self.grid):
             for col, cell in enumerate(row):
                 if cell.is_alive():
                     # (0, 0), (0,20) (20,0), (20,20) < these are the coordinates
-                   square_coords = (i * cell.size, col * cell.size,
+                    square_coords = (i * cell.size, col * cell.size,
                                     i * cell.size, col * cell.size + cell.size,
                                     i * cell.size + cell.size, col * cell.size,
                                     i * cell.size + cell.size, col * cell.size + cell.size)
-                pyglet.graphics.draw_indexed(4, pyglet.gl.GL_TRIANGLES,
+                    pyglet.graphics.draw_indexed(4, pyglet.gl.GL_TRIANGLES,
                                     [0,1,2,1,2,3],
                                     ('v2i', square_coords))
 
