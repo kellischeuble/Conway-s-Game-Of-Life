@@ -1,7 +1,8 @@
 from cell import Cell
+import pyglet
 
 class Board():
-    def __init__(self, rows=12, columns=12):
+    def __init__(self, rows=30, columns=30):
         """
         """
         self.rows = rows
@@ -66,6 +67,20 @@ class Board():
         """
         for row in self.grid:
             print([cell.get_print_character() for cell in row])
+
+    def draw(self):
+
+        for i, row in enumerate(self.grid):
+            for col, cell in enumerate(row):
+                if cell.is_alive():
+                    # (0, 0), (0,20) (20,0), (20,20) < these are the coordinates
+                   square_coords = (i * cell.size, col * cell.size,
+                                    i * cell.size, col * cell.size + cell.size,
+                                    i * cell.size + cell.size, col * cell.size,
+                                    i * cell.size + cell.size, col * cell.size + cell.size)
+                pyglet.graphics.draw_indexed(4, pyglet.gl.GL_TRIANGLES,
+                                    [0,1,2,1,2,3],
+                                    ('v2i', square_coords))
 
 
 

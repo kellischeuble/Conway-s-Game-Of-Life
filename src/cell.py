@@ -2,14 +2,17 @@ import random
 
 
 class Cell():
-    def __init__(self):
+    # change this size to alter tthe size of the cells
+    def __init__(self, size=20):
         self._status = "Dead"
+        self.size = size
     
     def init_random_state(self, seed="Random"):
         """
         """
         if seed == "Random":
-            states = ["Dead", "Alive"]
+            # want ~40% Alive.. 
+            states = ["Dead", "Alive", "Dead", "Alive", "Dead",]
             self._status = random.choice(states)
 
     def set_dead(self):
