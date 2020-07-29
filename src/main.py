@@ -8,7 +8,6 @@ def main():
 		height=600,
 		caption="Conway's Game of Life"
 	)
-
 	
 	# label = pyglet.text.Label('Hello, world',
 	#                           font_name='Times New Roman',
@@ -32,7 +31,7 @@ def main():
 	def on_key_press(symbol, modifiers):
 		print(f"the {symbol} key was pressed")
 
-	pyglet.clock.schedule_interval(update, 1.0/.2)
+	pyglet.clock.schedule_interval(update, 1.0/10.0)
 	pyglet.app.run()
 
 if __name__ == '__main__': 

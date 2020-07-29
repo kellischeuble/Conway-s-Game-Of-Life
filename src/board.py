@@ -2,8 +2,10 @@ from cell import Cell
 import pyglet
 
 class Board():
-    def __init__(self, rows=30, columns=30):
+    def __init__(self, rows=60, columns=60):
         """
+        Initializes board with given number of rows, columns
+        holding all Dead cells
         """
         self.rows = rows
         self.columns = columns
@@ -16,7 +18,7 @@ class Board():
 
     def update_board(self, new_board):
         """
-        new state will be added to the new_board
+        New state will be added to the new_board
         (out of place) depending on the number of 
         neighbors and the rules below
         """
@@ -27,43 +29,47 @@ class Board():
 
                 if cell.is_alive() and (n == 2  or n == 3):
                     new_board.grid[i][j].set_alive()
-                if not cell.is_alive() and n == 3:
+                elif not cell.is_alive() and n == 3:
                     new_board.grid[i][j].set_alive()
                 else:
                     new_board.grid[i][j].set_dead()
 
-        # I might potentially want to reuse this matrix later
         self.grid = new_board.grid
                 
     def count_neighbors(self, row, col):
         """
+        Counts neighbors by just going in a circle around
+        the given cell point.
+
+        Turns off any cells in the outer layer because
+        it goes out of range otherwise. I want to change this
+        later. One option is to change it so that the board wraps
+        around itself.
         """
+        
         n = 0
         
-        # I'm going to ignore outer cells for now
         if (row == 0 or row == self.rows-1):
-            row = 1
-        if (col ==0 or col == self.columns-1):
-            col = 1
+            return n
+        if (col == 0 or col == self.columns-1):
+            return n
 
-        # TODO: 
-        # Simplify this shiit
 
-        if self.grid[row-1][col].is_alive():
-            n += 1
-        if self.grid[row+1][col].is_alive():
-            n += 1
         if self.grid[row-1][col-1].is_alive():
             n += 1
+        if self.grid[row-1][col].is_alive():
+            n += 1
+        if self.grid[row-1][col+1].is_alive():
+            n +=1
         if self.grid[row][col-1].is_alive():
             n +=1
         if self.grid[row+1][col-1].is_alive():
             n +=1
-        if self.grid[row-1][col+1].is_alive():
-            n +=1
         if self.grid[row][col+1].is_alive():
             n +=1
         if self.grid[row+1][col+1].is_alive():
+            n +=1
+        if self.grid[row+1][col].is_alive():
             n +=1
         
         return n
