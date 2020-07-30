@@ -1,8 +1,10 @@
 import pyglet
+from instructions import user_input, print_intro
 
 from board import Board
 
-def main():
+def main(board_type, board_size, frame_ps):
+
 	window = pyglet.window.Window(
 		width=600,
 		height=600,
@@ -16,7 +18,10 @@ def main():
 	#                           anchor_x='center', anchor_y='center')
 
 	board = Board()
-	board.set_beginning_board()
+	if board_type == "checker":
+		board.set_checker_board()
+	else:
+		board.set_beginning_board()
 
 	@window.event
 	def on_draw():
@@ -35,4 +40,12 @@ def main():
 	pyglet.app.run()
 
 if __name__ == '__main__': 
-	main()
+
+	print_intro()
+	play, board_type, board_size, frame_ps = user_input() 
+
+	if play:
+		main(board_type, board_size, frame_ps)
+	else:
+		print("Go Home")
+		exit()

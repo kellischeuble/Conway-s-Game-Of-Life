@@ -15,6 +15,16 @@ class Board():
         for row in self.grid:
             for cell in row:
                 cell.init_random_state()
+    
+    def set_checker_board(self):
+        counter = 1
+        for row in self.grid:
+            for cell in row:
+                if counter % 2 == 0:
+                    cell.set_alive()
+                else:
+                    cell.set_dead()
+                counter+=1
 
     def update_board(self, new_board):
         """
