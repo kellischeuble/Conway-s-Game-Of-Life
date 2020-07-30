@@ -38,14 +38,14 @@ def user_input():
             wrong_input()
             
         
-        board_size = input("""\nHow many rows/columns do you want? \n -----------------
-        Options: \n 1. 15x15, 2. 30x30, 3. 60x60 (1/2/3)\n""")
-        if board_size == "1":
-            board_size == 15
-        elif board_size == "2":
-            board_size = 30
-        elif board_size == "3":
-            board_size = 60
+        cell_size = input("""\nHow large do you want the cells to be? \n -----------------
+        Options: \n 1. Small, 2. Medium, 3. Large (1/2/3)\n""")
+        if cell_size == "1":
+            cell_size = 8
+        elif cell_size == "2":
+            cell_size = 20
+        elif cell_size == "3":
+            cell_size = 50
         else:
             wrong_input()
 
@@ -54,13 +54,13 @@ def user_input():
         if frame_ps == "1":
             frame_ps = 1
         elif frame_ps == "2":
-            frame_ps = 20
+            frame_ps = 10
         elif frame_ps == "3":
-            frame_ps = 60
+            frame_ps = 50
         else:
             wrong_input()
-        print(board_type, board_size, frame_ps)
-        return True, board_type, board_size, frame_ps
+        print(board_type, type(cell_size), cell_size, frame_ps)
+        return True, board_type, cell_size, frame_ps
     
     else: 
         return False, None, None, None

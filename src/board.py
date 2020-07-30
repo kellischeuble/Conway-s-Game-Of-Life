@@ -2,14 +2,14 @@ from cell import Cell
 import pyglet
 
 class Board():
-    def __init__(self, rows=60, columns=60):
+    def __init__(self, cell_size, rows=60, columns=60):
         """
         Initializes board with given number of rows, columns
         holding all Dead cells
         """
         self.rows = rows
         self.columns = columns
-        self.grid = [[Cell() for column_cells in range(self.columns)] for row_cells in range(self.rows)]
+        self.grid = [[Cell(cell_size) for column_cells in range(self.columns)] for row_cells in range(self.rows)]
 
     def set_beginning_board(self):
         for row in self.grid:
