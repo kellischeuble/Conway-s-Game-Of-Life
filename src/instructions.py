@@ -2,9 +2,11 @@ def print_intro():
     """
     Prints out the rules of the game and user input
     """
-    print("\n\nHello, welcome to Conway's Game of Life!")
-    print("Here are the rules: \n")
-    print("""
+    print(
+        """
+        \n\nHello, welcome to Conway's Game of Life!
+            \nHere are the rules: \n
+
     1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.\n
     2. Any live cell with two or three live neighbours lives on to the next generation.\n
     3. Any live cell with more than three live neighbours dies, as if by overpopulation.\n
@@ -15,13 +17,12 @@ def wrong_input():
     print("\n!!!!!! Please enter in the right input next time !!!! \n")
     exit()
 
-def user_input():
+def get_user_input():
     """
     Determines the starting board type, board size, and frames/second
     """
 
     play = input("Are you ready to play? (y)\n")
-    
     if play.lower() == "y":
         
         board_type = input("""\nWhat would you like your starting board to be?\n-----------------
@@ -36,11 +37,11 @@ def user_input():
         cell_size = input("""\nHow large do you want the cells to be?\n-----------------
         Options:\n1. Small, 2. Medium, 3. Large (1/2/3)\n""")
         if cell_size == "1":
-            cell_size = 8
-        elif cell_size == "2":
             cell_size = 20
+        elif cell_size == "2":
+            cell_size = 25
         elif cell_size == "3":
-            cell_size = 50
+            cell_size = 35
         else:
             wrong_input()
 
@@ -54,7 +55,6 @@ def user_input():
             frame_ps = 50
         else:
             wrong_input()
-        print(board_type, type(cell_size), cell_size, frame_ps)
         return True, board_type, cell_size, frame_ps
     
     else: 

@@ -4,12 +4,12 @@ from board import Board
 def create_window(board_type, cell_size, frame_ps):
     
 	window = pyglet.window.Window(
-		width=600,
-		height=600,
+		width=800,
+		height=800,
 		caption="Conway's Game of Life"
 	)
 
-	board = Board(cell_size=cell_size)
+	board = Board(cell_size)
 	if board_type == "checker":
 		board.set_checker_board()
 	else:
@@ -22,7 +22,7 @@ def create_window(board_type, cell_size, frame_ps):
 
 	@window.event
 	def update(dt):
-		board.update_board(Board(cell_size=cell_size))
+		board.update_board(Board(cell_size))
 
 	@window.event
 	def on_key_press(symbol, modifiers):
