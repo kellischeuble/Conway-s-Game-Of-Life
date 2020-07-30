@@ -1,6 +1,6 @@
 # Conway's-Game-Of-Life
 
-This repo contains my application to Connway's Game of Life.
+This repo contains my application to [Connway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 ## Table of Contents
 - [Install](#install)
@@ -17,4 +17,4 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
-## Future-Feaetures
+## Future-Features
