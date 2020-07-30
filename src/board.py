@@ -17,6 +17,9 @@ class Board():
                 cell.init_random_state()
     
     def set_checker_board(self):
+        """
+        TODO: fix (just straight  line)
+        """
         counter = 1
         for row in self.grid:
             for cell in row:
@@ -48,8 +51,8 @@ class Board():
                 
     def count_neighbors(self, row, col):
         """
-        Counts neighbors by just going in a circle around
-        the given cell point.
+        Counts neighbors by going in a circle around
+        the given cell point at position row, col.
 
         Turns off any cells in the outer layer because
         it goes out of range otherwise. I want to change this
@@ -84,15 +87,10 @@ class Board():
         
         return n
 
-    def print_board(self):
-        """
-        For testing purposes
-        """
-        for row in self.grid:
-            print([cell.get_print_character() for cell in row])
-
     def draw(self):
         """
+        Function to draw the cuurrent board to 
+        pyglet application
         """
 
         for i, row in enumerate(self.grid):
@@ -106,6 +104,14 @@ class Board():
                     pyglet.graphics.draw_indexed(4, pyglet.gl.GL_TRIANGLES,
                                     [0,1,2,1,2,3],
                                     ('v2i', square_coords))
+
+    def print_board(self):
+        """
+        Function to print board to terminal
+        For testing purposes
+        """
+        for row in self.grid:
+            print([cell.get_print_character() for cell in row])
 
 
 

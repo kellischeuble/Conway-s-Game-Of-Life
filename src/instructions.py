@@ -1,12 +1,8 @@
-    
-board_types = ["random", "checker_board"]
-board_sizes = ["15x15", "30x30", "60x60"]
-
 def print_intro():
     """
     Prints out the rules of the game and user input
     """
-    print("Hello, welcome to Conway's Game of Life")
+    print("\n\nHello, welcome to Conway's Game of Life!")
     print("Here are the rules: \n")
     print("""
     1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.\n
@@ -24,22 +20,21 @@ def user_input():
     Determines the starting board type, board size, and frames/second
     """
 
-    play = input("Are you ready to play? (y/n)\n")
+    play = input("Are you ready to play? (y)\n")
     
     if play.lower() == "y":
         
-        board_type = input("""\nWhat would you like your starting board to be? \n -----------------
-        Options: \n 1. Random 2. Checker Board (1/2)\n""")
+        board_type = input("""\nWhat would you like your starting board to be?\n-----------------
+        Options:\n1.Random 2. Checker Board (1/2)\n""")
         if board_type == "1":
             board_type = "random"
         elif board_type == "2":
             board_type = "checker"
         else:
-            wrong_input()
-            
+            wrong_input() 
         
-        cell_size = input("""\nHow large do you want the cells to be? \n -----------------
-        Options: \n 1. Small, 2. Medium, 3. Large (1/2/3)\n""")
+        cell_size = input("""\nHow large do you want the cells to be?\n-----------------
+        Options:\n1. Small, 2. Medium, 3. Large (1/2/3)\n""")
         if cell_size == "1":
             cell_size = 8
         elif cell_size == "2":
@@ -49,8 +44,8 @@ def user_input():
         else:
             wrong_input()
 
-        frame_ps = input("""\nHow fast do you want it to go? \n -----------------
-        Options: \n 1. Very slow 2. Medium 3. Fast (1/2/3)\n""")
+        frame_ps = input("""\nHow fast do you want it to go?\n-----------------
+        Options:\n1. Very slow 2. Medium 3. Fast (1/2/3)\n""")
         if frame_ps == "1":
             frame_ps = 1
         elif frame_ps == "2":
