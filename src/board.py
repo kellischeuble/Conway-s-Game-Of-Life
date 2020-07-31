@@ -12,26 +12,17 @@ class Board():
         self.grid = [[Cell(cell_size) for column_cells in range(self.columns)] for row_cells in range(self.rows)]
 
     def set_beginning_board(self):
+        """
+        Sets each cell in board to random state of
+        "Alive" or "Dead"
+        """
         for row in self.grid:
             for cell in row:
                 cell.init_random_state()
-    
-    def set_checker_board(self):
-        """
-        TODO: fix (just straight  line)
-        """
-        counter = 1
-        for row in self.grid:
-            for cell in row:
-                if counter % 2 == 0:
-                    cell.set_alive()
-                else:
-                    cell.set_dead()
-                counter+=1
 
     def update_board(self, new_board):
         """
-        New state will be added to the new_board
+        Adds new state to the new_board
         (out of place) depending on the number of 
         neighbors and the rules below
         """
@@ -89,8 +80,7 @@ class Board():
 
     def draw(self):
         """
-        Function to draw the cuurrent board to 
-        pyglet application
+        Draws the current board to GUI
         """
 
         for i, row in enumerate(self.grid):
@@ -107,7 +97,7 @@ class Board():
 
     def print_board(self):
         """
-        Function to print board to terminal
+        Prints board to terminal
         For testing purposes
         """
         for row in self.grid:
