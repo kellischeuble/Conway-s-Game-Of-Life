@@ -1,5 +1,6 @@
 import pyglet
 from board import Board
+import os
 
 def create_window(board_type, cell_size, frame_ps):
     
@@ -8,6 +9,11 @@ def create_window(board_type, cell_size, frame_ps):
         height=800,
         caption="Conway's Game of Life"
     )
+
+    label = pyglet.text.Label(f"{round}",
+                          font_name='Times New Roman',
+                          font_size=36,
+                          x=10, y=10)
 
     board = Board(cell_size)
 
@@ -22,6 +28,7 @@ def create_window(board_type, cell_size, frame_ps):
     def on_draw():
         window.clear()
         board.draw()
+        label.draw()
 
     @window.event
     def update(dt):
@@ -30,6 +37,9 @@ def create_window(board_type, cell_size, frame_ps):
     @window.event
     def on_key_press(symbol, modifiers):
         print(f"the {symbol} key was pressed")
+
+    sound = pyglet.media.load("/Users/kellischeuble/Desktop/classes/lambda-material/CS/unit1/Conway-s-Game-Of-Life/src/music/Analog-synth-loop-110-bpm.wav")
+    sound.play()
 
     pyglet.clock.schedule_interval(update, 1.0/frame_ps)
     pyglet.app.run()
