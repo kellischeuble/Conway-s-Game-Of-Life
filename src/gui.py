@@ -10,8 +10,11 @@ def create_window(board_type, cell_size, frame_ps):
 	)
 
 	board = Board(cell_size)
-	if board_type == "checker":
-		board.set_checker_board()
+
+	if board_type == "penta-decathlon":
+		board.set_penta()
+    # elif board_type == "pulsar":
+    #     board.set_pulsar()
 	else:
 		board.set_beginning_board()
 

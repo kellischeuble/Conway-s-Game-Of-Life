@@ -26,11 +26,13 @@ def get_user_input():
     if play.lower() == "y":
         
         board_type = input("""\nWhat would you like your starting board to be?\n-----------------
-        Options:\n1.Random 2. Checker Board (1/2)\n""")
+        Options:\n1.Random 2. Penta-decathlon 3. Pulsar (1/2/3)\n""")
         if board_type == "1":
             board_type = "random"
         elif board_type == "2":
-            board_type = "checker"
+            board_type = "penta-decathlon"
+        elif board_type =="3":
+            board_type = "pulsar"
         else:
             wrong_input() 
         

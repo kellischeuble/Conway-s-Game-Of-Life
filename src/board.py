@@ -113,13 +113,106 @@ class Board():
         for row in self.grid:
             print([cell.get_print_character() for cell in row])
 
+    def set_penta(self):
+
+        rows = [5,6,7,8,13,14,15,16]
+        columns = [6,7,8,9,10]
+
+        # I'm sorry to whoever has to see this monstrosity. 
+        # TODO: Write some loops for this
+
+        self.grid[rows[0]][columns[1]].set_alive()
+        self.grid[rows[0]][columns[2]].set_alive()
+        self.grid[rows[0]][columns[3]].set_alive()
+        self.grid[rows[1]][columns[0]].set_alive()
+        self.grid[rows[1]][columns[4]].set_alive()
+        self.grid[rows[2]][columns[0]].set_alive()
+        self.grid[rows[2]][columns[4]].set_alive()
+        self.grid[rows[3]][columns[1]].set_alive()
+        self.grid[rows[3]][columns[2]].set_alive()
+        self.grid[rows[3]][columns[3]].set_alive()
+        self.grid[rows[4]][columns[1]].set_alive()
+        self.grid[rows[4]][columns[2]].set_alive()
+        self.grid[rows[4]][columns[3]].set_alive()
+        self.grid[rows[5]][columns[0]].set_alive()
+        self.grid[rows[5]][columns[4]].set_alive()
+        self.grid[rows[6]][columns[0]].set_alive()
+        self.grid[rows[6]][columns[4]].set_alive()
+        self.grid[rows[7]][columns[1]].set_alive()
+        self.grid[rows[7]][columns[2]].set_alive()
+        self.grid[rows[7]][columns[3]].set_alive()
+
+        rows = [20,21,22,23,28,29,30,31]
+        columns = [13,14,15,16,17]
+
+        self.grid[rows[0]][columns[1]].set_alive()
+        self.grid[rows[0]][columns[2]].set_alive()
+        self.grid[rows[0]][columns[3]].set_alive()
+        self.grid[rows[1]][columns[0]].set_alive()
+        self.grid[rows[1]][columns[4]].set_alive()
+        self.grid[rows[2]][columns[0]].set_alive()
+        self.grid[rows[2]][columns[4]].set_alive()
+        self.grid[rows[3]][columns[1]].set_alive()
+        self.grid[rows[3]][columns[2]].set_alive()
+        self.grid[rows[3]][columns[3]].set_alive()
+        self.grid[rows[4]][columns[1]].set_alive()
+        self.grid[rows[4]][columns[2]].set_alive()
+        self.grid[rows[4]][columns[3]].set_alive()
+        self.grid[rows[5]][columns[0]].set_alive()
+        self.grid[rows[5]][columns[4]].set_alive()
+        self.grid[rows[6]][columns[0]].set_alive()
+        self.grid[rows[6]][columns[4]].set_alive()
+        self.grid[rows[7]][columns[1]].set_alive()
+        self.grid[rows[7]][columns[2]].set_alive()
+        self.grid[rows[7]][columns[3]].set_alive()
+
+    def set_pulsar(self):
+
+        rows = [x for x in range(15,29)]
+        columns = [x for x in range(15,29)]
+
+        self.grid[rows[0]][columns[2]].set_alive()
+        self.grid[rows[0]][columns[3]].set_alive()
+        self.grid[rows[0]][columns[4]].set_alive()
+        self.grid[rows[2]][columns[0]].set_alive()
+        self.grid[rows[2]][columns[5]].set_alive()
+        self.grid[rows[3]][columns[0]].set_alive()
+        self.grid[rows[3]][columns[5]].set_alive()
+        self.grid[rows[4]][columns[0]].set_alive()
+        self.grid[rows[5]][columns[2]].set_alive()
+        self.grid[rows[5]][columns[3]].set_alive()
+        self.grid[rows[5]][columns[4]].set_alive()
 
 
-
-
-
-
-
+        # self.grid[rows[4]][columns[2]].set_alive()
+        # self.grid[rows[4]][columns[3]].set_alive()
+        # self.grid[rows[5]][columns[0]].set_alive()
+        # self.grid[rows[5]][columns[4]].set_alive()
+        # self.grid[rows[6]][columns[0]].set_alive()
+        # self.grid[rows[6]][columns[4]].set_alive()
+        # self.grid[rows[7]][columns[1]].set_alive()
+        # self.grid[rows[7]][columns[2]].set_alive()
+        # self.grid[rows[7]][columns[3]].set_alive() 
+        # self.grid[rows[0]][columns[1]].set_alive()
+        # self.grid[rows[0]][columns[2]].set_alive()
+        # self.grid[rows[0]][columns[3]].set_alive()
+        # self.grid[rows[1]][columns[0]].set_alive()
+        # self.grid[rows[1]][columns[4]].set_alive()
+        # self.grid[rows[2]][columns[0]].set_alive()
+        # self.grid[rows[2]][columns[4]].set_alive()
+        # self.grid[rows[3]][columns[1]].set_alive()
+        # self.grid[rows[3]][columns[2]].set_alive()
+        # self.grid[rows[3]][columns[3]].set_alive()
+        # self.grid[rows[4]][columns[1]].set_alive()
+        # self.grid[rows[4]][columns[2]].set_alive()
+        # self.grid[rows[4]][columns[3]].set_alive()
+        # self.grid[rows[5]][columns[0]].set_alive()
+        # self.grid[rows[5]][columns[4]].set_alive()
+        # self.grid[rows[6]][columns[0]].set_alive()
+        # self.grid[rows[6]][columns[4]].set_alive()
+        # self.grid[rows[7]][columns[1]].set_alive()
+        # self.grid[rows[7]][columns[2]].set_alive()
+        # self.grid[rows[7]][columns[3]].set_alive()
 
 
 
