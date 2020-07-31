@@ -184,37 +184,6 @@ class Board():
         self.grid[rows[5]][columns[4]].set_alive()
 
 
-        # self.grid[rows[4]][columns[2]].set_alive()
-        # self.grid[rows[4]][columns[3]].set_alive()
-        # self.grid[rows[5]][columns[0]].set_alive()
-        # self.grid[rows[5]][columns[4]].set_alive()
-        # self.grid[rows[6]][columns[0]].set_alive()
-        # self.grid[rows[6]][columns[4]].set_alive()
-        # self.grid[rows[7]][columns[1]].set_alive()
-        # self.grid[rows[7]][columns[2]].set_alive()
-        # self.grid[rows[7]][columns[3]].set_alive() 
-        # self.grid[rows[0]][columns[1]].set_alive()
-        # self.grid[rows[0]][columns[2]].set_alive()
-        # self.grid[rows[0]][columns[3]].set_alive()
-        # self.grid[rows[1]][columns[0]].set_alive()
-        # self.grid[rows[1]][columns[4]].set_alive()
-        # self.grid[rows[2]][columns[0]].set_alive()
-        # self.grid[rows[2]][columns[4]].set_alive()
-        # self.grid[rows[3]][columns[1]].set_alive()
-        # self.grid[rows[3]][columns[2]].set_alive()
-        # self.grid[rows[3]][columns[3]].set_alive()
-        # self.grid[rows[4]][columns[1]].set_alive()
-        # self.grid[rows[4]][columns[2]].set_alive()
-        # self.grid[rows[4]][columns[3]].set_alive()
-        # self.grid[rows[5]][columns[0]].set_alive()
-        # self.grid[rows[5]][columns[4]].set_alive()
-        # self.grid[rows[6]][columns[0]].set_alive()
-        # self.grid[rows[6]][columns[4]].set_alive()
-        # self.grid[rows[7]][columns[1]].set_alive()
-        # self.grid[rows[7]][columns[2]].set_alive()
-        # self.grid[rows[7]][columns[3]].set_alive()
-
-
 
 
 
