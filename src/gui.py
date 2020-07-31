@@ -10,11 +10,6 @@ def create_window(board_type, cell_size, frame_ps):
         caption="Conway's Game of Life"
     )
 
-    # label = pyglet.text.Label(f"{round}",
-    #                       font_name='Times New Roman',
-    #                       font_size=36,
-    #                       x=10, y=10)
-
     board = Board(cell_size)
 
     if board_type == "penta-decathlon":
@@ -28,7 +23,6 @@ def create_window(board_type, cell_size, frame_ps):
     def on_draw():
         window.clear()
         board.draw()
-        label.draw()
 
     @window.event
     def update(dt):
