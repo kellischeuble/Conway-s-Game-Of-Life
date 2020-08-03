@@ -28,11 +28,7 @@ def create_window(board_type, cell_size, frame_ps):
     def update(dt):
         board.update_board(Board(cell_size))
 
-    @window.event
-    def on_key_press(symbol, modifiers):
-        print(f"the {symbol} key was pressed")
-
-    sound = pyglet.media.load("/Users/kellischeuble/Desktop/classes/lambda-material/CS/unit1/Conway-s-Game-Of-Life/src/music/Analog-synth-loop-110-bpm.wav")
+    sound = pyglet.media.load("/Users/kellischeuble/Desktop/classes/lambda-material/CS/unit1/Conway-s-Game-Of-Life/src/music/Infected_Mushroom_Walking_On_The_Moon_Monsterca.wav")
     sound.play()
 
     pyglet.clock.schedule_interval(update, 1.0/frame_ps)
